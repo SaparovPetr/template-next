@@ -4,11 +4,12 @@ type Props = {
   params: {
     id: string;
   };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export async function generateMetadata({
   params: { id },
-}: Props): Promise<any> {
+}: Props): Promise<Metadata> {
   const post = await getData(id);
 
   return {
