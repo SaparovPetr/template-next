@@ -7,9 +7,7 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata({
-  params: { id },
-}: Props): Promise<any> {
+export async function generateMetadata({ params: { id } }: any) {
   const post = await getData(id);
 
   return {
@@ -30,7 +28,7 @@ async function getData(id: string) {
   return response.json();
 }
 
-export default async function Post({ params: { id } }: Props) {
+export default async function Post({ params: { id } }: any) {
   const post = await getData(id);
   return (
     <>
